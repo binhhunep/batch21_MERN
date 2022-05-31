@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  .container_image {
+  }
+  .container_title {
+    font-size: 1.5vw;
+    margin: 1vw 0;
+    color: rgb(129, 126, 126);
+  }
+  .container_job {
+    font-size: 1.2vw;
+    color: lightgrey;
+  }
+}

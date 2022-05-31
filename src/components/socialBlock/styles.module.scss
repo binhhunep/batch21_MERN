@@ -1,0 +1,27 @@
+.container {
+  font-size: 1vw;
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+  width: 15vw;
+  margin: 0 1vw;
+  justify-content: space-between;
+  text-align: start;
+  color: white;
+  .container_icon {
+    font-size: 3vw;
+    margin-bottom: 6vw;
+  }
+  .container_content {
+    display: flex;
+    flex-direction: column;
+    .container_title {
+      margin: 5px 0;
+      font-size: 2vw;
+    }
+    .container_text {
+      margin: 5px 0;
+      font-size: 1vw;
+    }
+  }
+}

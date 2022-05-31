@@ -1,0 +1,28 @@
+.container {
+  font-size: 1.2vw;
+  display: flex;
+  justify-content: center;
+  padding: 0.5vw;
+  border-bottom: 1px dashed lightgrey;
+  .container_icon {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1vw;
+    margin-left: -5%;
+    color: #636761;
+  }
+  .container_content {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    .content_title {
+      color: #636761;
+    }
+    .content_text {
+      color: #636761;
+      margin-left: 1vw;
+    }
+  }
+}

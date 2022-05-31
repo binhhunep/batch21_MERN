@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  text-align: start;
+  .container_percentage {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0.5vw;
+    .container_showPercentage {
+      background-color: #f9b900;
+      height: 1vw;
+    }
+    .container_hidePercentage {
+      background-color: #e3e3e3;
+      height: 1vw;
+      flex-grow: 1;
+    }
+  }
+  .container_sold {
+    color: #a7a2a2;
+  }
+}

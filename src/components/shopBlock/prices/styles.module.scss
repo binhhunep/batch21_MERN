@@ -1,0 +1,13 @@
+.container {
+  font-size: 1.2vw;
+  font-weight: 700;
+  color: #383837;
+  margin-bottom: 0.5vw;
+  .container_discount {
+    font-size: 0.8vw;
+    font-weight: 700;
+    color: #7b7b79;
+    text-decoration: line-through;
+    margin-left: 0.3vw;
+  }
+}

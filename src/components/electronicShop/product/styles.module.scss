@@ -1,0 +1,32 @@
+.container {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #afaca8;
+  .container_saleOff {
+    color: white;
+    font-size: 1vw;
+    position: absolute;
+    background-color: #f24604;
+    width: 3vw;
+    border-radius: 2px;
+    top: 0;
+    right: 0vw;
+    font-weight: 700;
+  }
+  .container_image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+  }
+  .container_title {
+    width: 100%;
+    font-size: 1vw;
+    font-weight: 500;
+    text-align: start;
+    color: #3e3e3d;
+    margin-bottom: 0.5vw;
+  }
+}

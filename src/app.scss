@@ -1,0 +1,136 @@
+.app {
+  box-sizing: border-box;
+  margin: 0 1vw;
+  .app_chartBar1 {
+    margin: 2vw 4vw;
+    position: relative;
+    text-align: center;
+    width: 80%;
+    padding: 1vw;
+    margin: 1.5vw auto;
+    box-shadow: 5px 5px 5px lightgrey;
+    border: 1px solid lightgrey;
+    .chartBar1_button_add {
+      width: 30px;
+      height: 30px;
+
+      cursor: pointer;
+      position: absolute;
+      left: 1.2vw;
+      top: 1vw;
+      border-radius: 5px;
+      font-weight: 500;
+      color: white;
+    }
+    .chartBar1_body {
+      display: flex;
+      align-items: center;
+      .body_icon {
+        font-size: 1.5vw;
+        margin-bottom: 2vw;
+        margin-left: -9vw;
+        margin-right: 4vw;
+        display: flex;
+        justify-content: end;
+        .body_icon_edit {
+          text-align: end;
+          cursor: pointer;
+        }
+        .body_icon_delete {
+          text-align: end;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .app_profile {
+    margin: 2vw 4vw;
+    text-align: center;
+    width: 80%;
+    padding: 10px;
+    margin: 15px auto;
+    box-shadow: 5px 5px 5px lightgrey;
+    border: 1px solid lightgrey;
+  }
+  .app_socialBlock {
+    margin: 2vw 4vw;
+    width: 80%;
+    padding: 10px;
+    margin: 15px auto;
+    box-shadow: 5px 5px 5px lightgrey;
+    border: 1px solid lightgrey;
+    text-align: center;
+    .app_socialBlock_body {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .app_chartColumn {
+    text-align: center;
+    text-align: center;
+    margin: 2vw 4vw;
+    .app_chartColumn_body {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .app_person {
+    text-align: center;
+    margin: 2vw 4vw;
+    .app_person_body {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .app_shopBlock {
+    margin: 2vw 4vw;
+    text-align: center;
+    .app_shopBlock_body {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .app_electronicShop {
+    margin: 2vw 4vw;
+    text-align: center;
+    .app_electronicShop_header {
+      font-size: 1.5vw;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #cccac9;
+      .header_left {
+        display: flex;
+        .header_left_title {
+          font-size: 1.8vw;
+          margin-right: 4vw;
+          color: #3e3e3d;
+        }
+        .header_left_dealTime {
+          padding: 0.3vw 1.5vw;
+          background-color: #f24604;
+          color: white;
+          border-radius: 0.3vw;
+          margin-bottom: 1vw;
+          font-weight: 700;
+        }
+      }
+      .header_right {
+        text-align: center;
+        border-bottom: 1px solid #cccac9;
+        margin-bottom: 1vw;
+      }
+    }
+    .app_electronicShop_body {
+      margin-top: 3vw;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .app_state {
+    width: 100%;
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
