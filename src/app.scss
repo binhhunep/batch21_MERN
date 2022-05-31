@@ -11,13 +11,14 @@
     box-shadow: 5px 5px 5px lightgrey;
     border: 1px solid lightgrey;
     .chartBar1_button_add {
-      width: 30px;
-      height: 30px;
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3.5vw;
+      height: 3.5vw;
       cursor: pointer;
       position: absolute;
       left: 1.2vw;
-      top: 1vw;
       border-radius: 5px;
       font-weight: 500;
       color: white;
@@ -26,7 +27,7 @@
       display: flex;
       align-items: center;
       .body_icon {
-        font-size: 1.5vw;
+        font-size: 1.4vw;
         margin-bottom: 2vw;
         margin-left: -9vw;
         margin-right: 4vw;
