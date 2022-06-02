@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import chartBarSlice from "../slices/chartBar/chartBarSlice";
-import chartColumnSlice from "../slices/chartColumn/chartColumnSlice";
-import profileSlice from "../slices/profile/profileSlice";
-import socialBlockSlice from "../slices/socialBlock/socialBlockSlice";
-import personSlice from "../slices/person/personSlice";
-import shopBlockSlice from "../slices/shopBlock/shopBlockSlice";
-import electronicShopSlice from "../slices/electronicShop/electronicShopSlice";
+import chartBarSlice from "../slices/session1/chartBar/chartBarSlice";
+import chartColumnSlice from "../slices/session1/chartColumn/chartColumnSlice";
+import profileSlice from "../slices/session1/profile/profileSlice";
+import socialBlockSlice from "../slices/session1/socialBlock/socialBlockSlice";
+import personSlice from "../slices/session1/person/personSlice";
+import shopBlockSlice from "../slices/session1/shopBlock/shopBlockSlice";
+import electronicShopSlice from "../slices/session1/electronicShop/electronicShopSlice";
 const reduxStore = configureStore({
   reducer: {
     chartBar: chartBarSlice.reducer,

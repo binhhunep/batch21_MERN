@@ -1,0 +1,23 @@
+.container {
+  box-sizing: border-box;
+  margin: 2vw 3vw;
+  border: solid black;
+  .container_likeButton {
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container_rateButton {
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container_imageViewer {
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
