@@ -7,6 +7,8 @@ import { Modal, Button } from "react-bootstrap";
 import LikeButton from "./likeButton";
 import ImageViewer from "./imageViewer";
 import RateButton from "./rateButton";
+import TabbedContent from "./tabbedContent";
+import ImageGalleries from "./imageGalleries";
 export default function Session2() {
   return (
     <div className={styles.container}>
@@ -21,6 +23,13 @@ export default function Session2() {
       <div className={styles.container_imageViewer}>
         <h1>{"3.Image Viewer"}</h1>
         <ImageViewer />
+      </div>
+      <div className={styles.container_tabbedContent}>
+        <h1>{"4.Tabbed Content"}</h1>
+        <TabbedContent />
+      </div>
+      <div className={styles.container_tabbedContent}>
+        <ImageGalleries />
       </div>
     </div>
   );

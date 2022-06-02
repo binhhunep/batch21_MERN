@@ -1,0 +1,62 @@
+.container {
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  .header {
+    padding: 5vw 10vw;
+    background-color: #f8f8f8;
+    width: 100%;
+    .header_title {
+      color: #292929;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-right: 16vw;
+      margin-bottom: 2vw;
+      .header_title_text {
+        font-size: 2vw;
+      }
+    }
+    .header_content {
+      line-height: 2vw;
+      width: 30%;
+      .header_oList {
+        text-align: start;
+        li {
+          font-size: 1.2vw;
+          margin-right: 1vw;
+          a {
+            color: #4fb77b;
+            text-decoration: none;
+            font-size: 1.2vw;
+          }
+        }
+      }
+    }
+  }
+  .body {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 5vw 10vw;
+    .body_standardSlider {
+      .body_standardSlider_tiltle {
+        padding: 5vw 0;
+        .standardSlider_tiltle {
+          font-size: 1.8vw;
+          letter-spacing: 0.5vw;
+          margin-bottom: 2vw;
+          color: #292929;
+        }
+        .standardSlider_content {
+          font-size: 1.5vw;
+          color: #292929;
+        }
+      }
+    }
+    .body_sliderThumbNailControls {
+    }
+    .body_lightBoxGridGallery {
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2vw;
+  .container_up {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1vw 0;
+  }
+  .container_content {
+    color: #aeaeae;
+    text-indent: 4vw;
+    text-align: justify;
+    margin: 1vw;
+    font-size: 1.2vw;
+  }
+}

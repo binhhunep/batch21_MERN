@@ -45,7 +45,6 @@ export default function Navbar() {
             <li className={`${styles.nav_item} nav-item dropdown`}>
               <a
                 className={`${styles.nav_link} nav-link dropdown-toggle`}
-                href="#"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"

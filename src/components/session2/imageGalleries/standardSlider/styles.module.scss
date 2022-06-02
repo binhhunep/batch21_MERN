@@ -1,0 +1,23 @@
+.container {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  .container_image {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: 100%;
+  }
+  .container_imageSelector {
+    position: absolute;
+    top: 42vw;
+    left: 31vw;
+    z-index: 3;
+    color: white;
+    display: flex;
+    .container_imageSelector_item {
+      margin-right: 1vw;
+    }
+  }
+}
