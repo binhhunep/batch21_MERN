@@ -1,14 +1,15 @@
 .container {
   box-sizing: border-box;
-  align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   .header {
     padding: 5vw 10vw;
     background-color: #f8f8f8;
     width: 100%;
     .header_title {
-      color: #292929;
+      color: #4f4f4f;
       text-transform: uppercase;
       letter-spacing: 5px;
       margin-right: 16vw;
@@ -19,7 +20,8 @@
     }
     .header_content {
       line-height: 2vw;
-      width: 30%;
+      width: 35%;
+      color: #898989;
       .header_oList {
         text-align: start;
         li {
@@ -46,17 +48,45 @@
           font-size: 1.8vw;
           letter-spacing: 0.5vw;
           margin-bottom: 2vw;
-          color: #292929;
+          color: #4f4f4f;
         }
         .standardSlider_content {
           font-size: 1.5vw;
-          color: #292929;
+          color: #898989;
         }
       }
     }
     .body_sliderThumbNailControls {
+      margin-top: 5vw;
+      .body_sliderThumbNailControls_tiltle {
+        padding: 5vw 0;
+        .sliderThumbNailControls_tiltle {
+          font-size: 1.8vw;
+          letter-spacing: 0.5vw;
+          margin-bottom: 2vw;
+          color: #4f4f4f;
+        }
+        .sliderThumbNailControls_content {
+          font-size: 1.5vw;
+          color: #898989;
+        }
+      }
     }
     .body_lightBoxGridGallery {
+      margin-top: 5vw;
+      .body_lightBoxGridGallery_tiltle {
+        padding: 5vw 0;
+        .lightBoxGridGallery_tiltle {
+          font-size: 1.8vw;
+          letter-spacing: 0.5vw;
+          margin-bottom: 2vw;
+          color: #4f4f4f;
+        }
+        .lightBoxGridGallery_content {
+          font-size: 1.5vw;
+          color: #898989;
+        }
+      }
     }
   }
 }

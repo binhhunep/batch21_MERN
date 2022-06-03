@@ -1,4 +1,39 @@
 .container {
   box-sizing: border-box;
-  margin: 2vw 3vw;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  .container_changeImage {
+    margin: -15px auto;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    top: 26vw;
+    .container_changeImage_left {
+      padding: 0;
+      .container_chevron_left {
+        cursor: pointer;
+      }
+    }
+    .container_changeImage_right {
+      padding: 0;
+      .container_chevron_right {
+        cursor: pointer;
+      }
+    }
+  }
+  .container_image {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: 100%;
+  }
+  .container_imageSelector {
+    display: flex;
+    justify-content: space-between;
+    .container_imageSelector_item {
+      width: 25%;
+    }
+  }
 }
