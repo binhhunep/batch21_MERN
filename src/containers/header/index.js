@@ -44,7 +44,7 @@ export default function Header() {
         </h1>
         <button
           style={{
-            width: "12vw",
+            width: "12vmax",
             color: "white",
             fontSize: "1.5vmax",
             background: "none",
