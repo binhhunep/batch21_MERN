@@ -2,6 +2,7 @@
   font-size: 1.2vw;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 0.5vw;
   border-bottom: 1px dashed lightgrey;
   .container_icon {
@@ -12,6 +13,9 @@
     margin-right: 1vw;
     margin-left: -5%;
     color: #636761;
+    .icon {
+      size: 1.2vw;
+    }
   }
   .container_content {
     width: 80%;
@@ -19,8 +23,10 @@
     justify-content: space-between;
     .content_title {
       color: #636761;
+      font-size: 1.2vw;
     }
     .content_text {
+      font-size: 1.2vw;
       color: #636761;
       margin-left: 1vw;
     }

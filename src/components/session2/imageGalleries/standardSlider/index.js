@@ -14,6 +14,7 @@ export default function StandardSlider() {
   const dotSelect = [1, 2, 3];
   const changeImageClick = (item) => {
     setImageSelect(item);
+    setShow(!show);
   };
 
   //unmouting

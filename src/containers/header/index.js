@@ -22,7 +22,11 @@ export default function Header() {
     <>
       <div className={styles.header}>
         <h1
-          style={{ color: "white", fontSize: "3vmax", padding: "1vmax 3vmax" }}
+          style={{
+            color: "white",
+            fontSize: "2.5vmax",
+            padding: "1vmax 3vmax",
+          }}
         >
           SPECIAL COFFEE BEANS
         </h1>
@@ -33,6 +37,7 @@ export default function Header() {
             textAlign: "justify",
             fontSize: "1.5vmax",
             padding: "0 4vmax",
+            wordWrap: "normal",
           }}
         >
           {state.para}

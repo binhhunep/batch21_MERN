@@ -1,5 +1,5 @@
 .navbar {
-  margin: 0 15vmax;
+  margin: 0 10vmax;
   padding: 0.5vmax 1vmax;
   background-color: rgba(17, 17, 17, 0.3);
   display: flex;
@@ -9,7 +9,7 @@
     .navbar_brand {
       margin-top: -10px;
       .navbar_logo {
-        width: 100px;
+        width: 10vw;
         object-fit: cover;
       }
     }
@@ -34,6 +34,7 @@
             background-color: rgba(17, 17, 17, 0.5);
           }
           .dropdown_menu {
+            z-index: 2;
             margin-top: 10px;
             padding: 0;
             border-radius: 0px;

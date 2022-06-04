@@ -4,11 +4,33 @@
   padding: 0;
   .container_images {
     display: flex;
-    .container_image {
+    height: 100%;
+    justify-content: center;
+    .container_image_animation {
       width: 100%;
-      aspect-ratio: 4/3;
       object-fit: cover;
       margin-bottom: 15px;
+      height: 150px;
+      animation-name: startAnimation;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+    }
+    @keyframes startAnimation {
+      from {
+        opacity: 0.5;
+        transform: scale(1.2);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .container_image_noneAnimation {
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      height: 150px;
     }
     .container_modal {
       padding: 0vw 13vw;
@@ -19,6 +41,7 @@
       height: 100vmax;
       .container_modal_image {
         .modal_image_changeImage {
+          width: 100%;
           display: flex;
           justify-content: space-between;
           position: relative;
@@ -60,6 +83,17 @@
         width: 100%;
         aspect-ratio: 4/2;
         object-fit: cover;
+        animation-name: fade;
+        animation-duration: 500ms;
+        animation-timing-function: linear;
+      }
+      @keyframes fade {
+        from {
+          transform: scale(1.1);
+        }
+        to {
+          transform: scale(1);
+        }
       }
     }
 

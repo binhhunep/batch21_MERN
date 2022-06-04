@@ -1,13 +1,21 @@
 import styles from "./styles.module.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { Modal, Button } from "react-bootstrap";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
+//import animate
+import Animate from "rc-animate";
+/****************************************/
+
 export default function LightBoxGridGallery() {
+  //import animate
+  const [show, setShow] = useState(true);
+  /****************************************/
   const images = [1, 2, 3, 4, 5, 6, 7, 8];
+  const [start, setStart] = useState(1);
   const [image, setImage] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const closeModal = () => {
@@ -16,17 +24,35 @@ export default function LightBoxGridGallery() {
   const selectImage = (item) => {
     setOpenModal(!openModal);
     setImage(item);
+    setShow(!show);
   };
   const changeImageLeftClick = () => {
     if (image > 1) {
       setImage(image - 1);
+      setShow(!show);
     }
   };
   const changeImageRightClick = () => {
     if (image < 8) {
       setImage(image + 1);
+      setShow(!show);
     }
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      // console.debug("Timer id: ", timer) ;
+      // Kiem tra so lan render cua app, toi uu la gia tri nay khong doi
+      if (start < 9) {
+        console.log("Start: ", start);
+        setStart(start + 1);
+      } else {
+        setStart(1);
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [start]);
+
   return (
     <div className={`row ${styles.container}`}>
       {images.map((item, index) => {
@@ -35,12 +61,25 @@ export default function LightBoxGridGallery() {
             className={`col-lg-3 col-md-4 col-sm-6 ${styles.container_images}`}
             key={index}
           >
-            <img
-              onClick={() => selectImage(item)}
-              alt="Images"
-              src={`images/session2/imageGallaries/lightboxGridGallery/${item}.jpg`}
-              className={` ${styles.container_image}`}
-            />
+            {start === item ? (
+              <Animate>
+                <img
+                  key={start === item}
+                  onClick={() => selectImage(item)}
+                  alt="Images"
+                  src={`images/session2/imageGallaries/lightboxGridGallery/${item}.jpg`}
+                  className={` ${styles.container_image_animation}`}
+                />
+              </Animate>
+            ) : (
+              <img
+                key={start === item}
+                onClick={() => selectImage(item)}
+                alt="Images"
+                src={`images/session2/imageGallaries/lightboxGridGallery/${item}.jpg`}
+                className={` ${styles.container_image_noneAnimation}`}
+              />
+            )}
             <div
               style={{
                 display: openModal && image === item ? "block" : "none",
@@ -72,11 +111,14 @@ export default function LightBoxGridGallery() {
                     />
                   </div>
                 </div>
-                <img
-                  alt="Images"
-                  src={`images/session2/imageGallaries/lightboxGridGallery/${image}.jpg`}
-                  className={styles.modal_image_picture}
-                />
+                <Animate>
+                  <img
+                    key={show}
+                    alt="Images"
+                    src={`images/session2/imageGallaries/lightboxGridGallery/${image}.jpg`}
+                    className={styles.modal_image_picture}
+                  />
+                </Animate>
               </div>
               <div className={` ${styles.container_modal_content}`}>
                 <span
