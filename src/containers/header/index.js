@@ -4,16 +4,28 @@ import "bootstrap";
 import Navbar from "../navbar";
 
 export default function Header() {
-  const [state, setState] = useState({ para: "", check: true });
+  const [state, setState] = useState({
+    mongoDB: "",
+    express: "",
+    react: "",
+    node: "",
+    check: false,
+  });
 
   const readclick = () => {
     state.check === true
       ? setState({
-          para: "Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee.This article is about the brewed beverage. For the seeds from which it is made, see Coffee bean. For the plant, see Coffea. For other uses, see Coffee (disambiguation).",
+          mongoDB: "1. MongoDB – document database",
+          express: "2. Express(.js) – Node.js web framework",
+          react: "3. React(.js) – a client-side JavaScript framework",
+          node: "4. Node(.js) – the premier JavaScript web server",
           check: !state.check,
         })
       : setState({
-          para: "",
+          mongoDB: "",
+          express: "",
+          react: "",
+          node: "",
           check: !state.check,
         });
   };
@@ -28,23 +40,11 @@ export default function Header() {
             padding: "1vmax 3vmax",
           }}
         >
-          SPECIAL COFFEE BEANS
+          MERN FULL STACK DEVELOPER
         </h1>
-        <p
-          className="text-white "
-          style={{
-            textIndent: "3vw",
-            textAlign: "justify",
-            fontSize: "1.5vmax",
-            padding: "0 4vmax",
-            wordWrap: "normal",
-          }}
-        >
-          {state.para}
-        </p>
-        <br />
         <button
           style={{
+            width: "12vw",
             color: "white",
             fontSize: "1.5vmax",
             background: "none",
@@ -56,6 +56,25 @@ export default function Header() {
         >
           Read More
         </button>
+        <br />
+        <p
+          className="text-white "
+          style={{
+            textIndent: "3vw",
+            textAlign: "justify",
+            fontSize: "1.5vmax",
+            padding: "0 4vmax",
+            wordWrap: "normal",
+          }}
+        >
+          {
+            "MERN stands for MongoDB, Express, React, Node, after the four key technologies that make up the stack."
+          }
+        </p>
+        <i>{state.mongoDB}</i>
+        <i>{state.express}</i>
+        <i>{state.react}</i>
+        <i>{state.node}</i>
         <br />
         <br />
       </div>
