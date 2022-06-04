@@ -6,6 +6,8 @@
     display: flex;
     .container_image {
       width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
       margin-bottom: 15px;
     }
     .container_modal {

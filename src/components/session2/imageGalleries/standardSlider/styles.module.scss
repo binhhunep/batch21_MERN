@@ -5,9 +5,25 @@
   width: 100%;
   position: relative;
   .container_image {
+    position: relative;
     aspect-ratio: 4/3;
     object-fit: cover;
     width: 100%;
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+  }
+  @keyframes fade {
+    from {
+      right: 500px;
+      transform: scale(0.5);
+      opacity: 0.2;
+    }
+    to {
+      right: 0px;
+      transform: scale(1);
+      opacity: 1;
+    }
   }
   .container_imageSelector {
     position: absolute;
