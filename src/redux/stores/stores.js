@@ -6,6 +6,10 @@ import socialBlockSlice from "../slices/session1/socialBlock/socialBlockSlice";
 import personSlice from "../slices/session1/person/personSlice";
 import shopBlockSlice from "../slices/session1/shopBlock/shopBlockSlice";
 import electronicShopSlice from "../slices/session1/electronicShop/electronicShopSlice";
+
+/*****SESSION2*******/
+import musicPlayerSlice from "../slices/session2/musicPlayer/musicPlayerSlice";
+import mediaPlayerSlice from "../slices/session2/musicPlayer/mediaPlayerSlice";
 const reduxStore = configureStore({
   reducer: {
     chartBar: chartBarSlice.reducer,
@@ -15,6 +19,9 @@ const reduxStore = configureStore({
     person: personSlice.reducer,
     shopBlock: shopBlockSlice.reducer,
     electronicShop: electronicShopSlice.reducer,
+    /*Sesion2*/
+    musicPlayer: musicPlayerSlice.reducer,
+    mediaPlayer: mediaPlayerSlice.reducer,
   },
 });
 

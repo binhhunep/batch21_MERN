@@ -9,6 +9,7 @@ import ImageViewer from "./imageViewer";
 import RateButton from "./rateButton";
 import TabbedContent from "./tabbedContent";
 import ImageGalleries from "./imageGalleries";
+import MusicPlayer from "./musicPlayer";
 //react motion
 export default function Session2() {
   return (
@@ -29,9 +30,13 @@ export default function Session2() {
         <h1>{"4.Tabbed Content"}</h1>
         <TabbedContent />
       </div>
-      <div className={styles.container_tabbedContent}>
+      <div className={styles.container_imageGalleries}>
         <h1>{"5.Image Galleries"}</h1>
         <ImageGalleries />
+      </div>
+      <div className={styles.container_musicPlayer}>
+        <h1>{"6.Music Player"}</h1>
+        <MusicPlayer />
       </div>
     </div>
   );

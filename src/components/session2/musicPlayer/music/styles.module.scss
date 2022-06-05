@@ -1,0 +1,53 @@
+.container {
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+  color: #3f4b6d;
+  background-color: white;
+  margin-bottom: 1vw;
+  border-radius: 10px;
+  .container_left {
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+
+    .container_left_index {
+      text-align: end;
+      font-size: 1vmax;
+    }
+    .container_left_avatar {
+      display: flex;
+      align-items: center;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .container_left_iconControl {
+      text-align: center;
+      font-size: 1vmax;
+      cursor: pointer;
+    }
+    .container_left_audioName {
+      text-align: justify;
+      font-size: 1vmax;
+    }
+  }
+  .container_right {
+    padding-top: 5px;
+    color: #babcc8;
+    justify-content: space-between;
+    .container_right_author {
+      padding-left: 12.5px;
+      text-align: justify;
+      font-size: 1vmax;
+    }
+    .container_right_duration {
+      text-align: center;
+      font-size: 1vmax;
+    }
+    .container_right_iconHeart {
+      text-align: end;
+      font-size: 1vmax;
+      cursor: pointer;
+    }
+  }
+}

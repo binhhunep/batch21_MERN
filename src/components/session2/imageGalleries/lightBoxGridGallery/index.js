@@ -44,7 +44,6 @@ export default function LightBoxGridGallery() {
       // console.debug("Timer id: ", timer) ;
       // Kiem tra so lan render cua app, toi uu la gia tri nay khong doi
       if (start < 9) {
-        console.log("Start: ", start);
         setStart(start + 1);
       } else {
         setStart(1);
