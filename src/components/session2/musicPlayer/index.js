@@ -38,6 +38,7 @@ export default function MusicPlayer() {
                 audioName={item.audioName}
                 author={item.author}
                 duration={item.duration}
+                timer={item.timer}
                 iconHeartColor={item.iconHeartColor}
               />
             </div>

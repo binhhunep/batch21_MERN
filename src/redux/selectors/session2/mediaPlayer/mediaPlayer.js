@@ -1,8 +1,7 @@
 import { createSelector } from "@reduxjs/toolkit";
 
 const mediaPlayerSelector = (state) => {
-  console.log("check state.mediaPlayer", state.mediaPlayer);
-  return state.mediaPlayer;
+  return state.mediaPlayer.filter((item) => item.select === true);
 };
 
 const mediaPlayerSelectorRemaining = createSelector(

@@ -1,10 +1,13 @@
 .container {
-  padding: 3vw 3vw 3vw 5vw;
+  padding: 3vw;
   background-color: #f8f9fe;
   justify-content: space-between;
   height: fit-content;
   width: 100%;
   .container_audio {
+    margin: 0vw;
+    padding: 0;
+    justify-content: center;
     .container_audio_title {
       margin-left: -1vw;
       text-align: start;
@@ -27,6 +30,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
     .container_media_title {
       margin-bottom: 1.3vw;
       text-align: start;

@@ -1,11 +1,10 @@
 .container {
   padding: 5px;
-  justify-content: space-between;
-  align-items: center;
   color: #3f4b6d;
   background-color: white;
   margin-bottom: 1vw;
   border-radius: 10px;
+  width: 100%;
   .container_left {
     justify-content: space-between;
     align-items: center;
@@ -35,8 +34,9 @@
     padding-top: 5px;
     color: #babcc8;
     justify-content: space-between;
+    align-items: center;
     .container_right_author {
-      padding-left: 12.5px;
+      padding-left: 9px;
       text-align: justify;
       font-size: 1vmax;
     }
