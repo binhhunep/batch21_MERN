@@ -35,7 +35,7 @@ export default function Session2() {
         <ImageGalleries />
       </div>
       <div className={styles.container_musicPlayer}>
-        <h1>{"6.Music Player"}</h1>
+        <h1>{"6.Music Player (Ver 1.0)"}</h1>
         <MusicPlayer />
       </div>
     </div>

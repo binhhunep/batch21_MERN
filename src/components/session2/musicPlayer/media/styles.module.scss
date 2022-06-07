@@ -22,34 +22,69 @@
       }
     }
     .container_body {
-      padding: 2vw 1vw;
+      padding: 2vw 1vw 2vw 1vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: #f8f9fe;
-      border-radius: 20px;
+      border-radius: 10px;
       .container_cover {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         .container_cover_art {
-          margin-bottom: 2vw;
+          margin-bottom: 1.5vw;
+          width: 10vw;
+          aspect-ratio: 4/4;
+          background-repeat: none;
+          background-size: cover;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           animation-name: disk;
-          animation-duration: 1s;
+          animation-duration: 4s;
           animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          border: 5px solid white;
+          .cover_art_center {
+            text-align: center;
+            width: 2vw;
+            height: 2vw;
+            background-color: rgba(248, 249, 254, 1);
+            border: 3px solid white;
+            border-radius: 50px;
+          }
         }
         @keyframes disk {
           from {
-            opacity: 0.5;
-            transform: scale(1.2) rotate(0);
+            transform: rotate(0);
           }
           to {
-            opacity: 1;
-            transform: scale(1) rotate(360deg);
+            transform: rotate(360deg);
           }
         }
+        .container_cover_art1 {
+          margin-bottom: 1.5vw;
+          width: 10vw;
+          aspect-ratio: 4/4;
+          background-size: cover;
+          background-repeat: none;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .cover_art_center {
+            width: 2vw;
+            height: 2vw;
+            background-color: rgba(248, 249, 254, 1);
+            border: 3px solid white;
+            border-radius: 50px;
+          }
+        }
+
         .container_cover_title {
           margin-bottom: 1vw;
           display: flex;
@@ -57,11 +92,11 @@
           align-items: center;
           h4 {
             font-weight: 700;
-            font-size: 2vmax;
+            font-size: 1.3vw;
             text-align: center;
           }
           p {
-            font-size: 1.5vmax;
+            font-size: 1vw;
             color: #babcc8;
             text-align: center;
           }
@@ -113,6 +148,7 @@
         animation-name: pause;
         animation-duration: 1s;
         animation-timing-function: linear;
+        animation-iteration-count: infinite;
       }
       @keyframes pause {
         from {
