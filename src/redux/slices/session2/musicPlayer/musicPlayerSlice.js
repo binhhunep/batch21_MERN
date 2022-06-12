@@ -12,7 +12,7 @@ const slice = createSlice({
       duration: "00:05:48",
       timer: 5 * 60 + 48,
       iconHeartColor: "#f75253",
-      select: true,
+      select: false,
     },
     {
       id: 2,

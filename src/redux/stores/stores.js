@@ -10,6 +10,11 @@ import electronicShopSlice from "../slices/session1/electronicShop/electronicSho
 /*****SESSION2*******/
 import musicPlayerSlice from "../slices/session2/musicPlayer/musicPlayerSlice";
 import mediaPlayerSlice from "../slices/session2/musicPlayer/mediaPlayerSlice";
+/*****simpleProjects*******/
+
+import musicSlice from "../slices/simpleProjects/musicPlayer/musicSlice";
+import mediaSlice from "../slices/simpleProjects/musicPlayer/mediaSlice";
+
 const reduxStore = configureStore({
   reducer: {
     chartBar: chartBarSlice.reducer,
@@ -22,6 +27,8 @@ const reduxStore = configureStore({
     /*Sesion2*/
     musicPlayer: musicPlayerSlice.reducer,
     mediaPlayer: mediaPlayerSlice.reducer,
+    simpleProjects_musicPlayer: musicSlice.reducer,
+    simpleProjects_mediaPlayer: mediaSlice.reducer,
   },
 });
 

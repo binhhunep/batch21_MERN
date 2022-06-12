@@ -1,0 +1,21 @@
+.container {
+  font-size: 2vmax;
+  cursor: pointer;
+  .container_icon {
+  }
+  .containerNew_icon {
+    font-size: 2vmax;
+    cursor: pointer;
+    animation: redo 2s linear infinite;
+  }
+  @keyframes redo {
+    from {
+      transform: rotate(0);
+      opacity: 0.5;
+    }
+    to {
+      transform: rotate(360deg);
+      opacity: 1;
+    }
+  }
+}

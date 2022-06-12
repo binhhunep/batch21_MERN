@@ -37,10 +37,35 @@ export default function Navbar() {
                 HOME
               </NavLink>
             </li>
-            <li className={`${styles.nav_item} nav-item`}>
-              <a className={`${styles.nav_link} nav-link`} href="#">
-                ABOUT US
+            <li className={`${styles.nav_item} nav-item dropdown`}>
+              <a
+                className={`${styles.nav_link} nav-link dropdown-toggle`}
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                MY PROJECTS
               </a>
+              <ul
+                className={`${styles.dropdown_menu} dropdown-menu`}
+                aria-labelledby="navbarDropdown"
+              >
+                <NavLink
+                  exact
+                  to="/SimpleProjects"
+                  className={`${styles.dropdown_item} dropdown-item`}
+                >
+                  Simple Projects
+                </NavLink>
+                <NavLink
+                  exact
+                  to="/AdvanceProjects"
+                  className={`${styles.dropdown_item} dropdown-item`}
+                >
+                  Advance Projects
+                </NavLink>
+              </ul>
             </li>
             <li className={`${styles.nav_item} nav-item dropdown`}>
               <a
@@ -69,6 +94,13 @@ export default function Navbar() {
                   className={`${styles.dropdown_item} dropdown-item`}
                 >
                   SESSION2
+                </NavLink>
+                <NavLink
+                  exact
+                  to="/Session3"
+                  className={`${styles.dropdown_item} dropdown-item`}
+                >
+                  SESSION3
                 </NavLink>
               </ul>
             </li>

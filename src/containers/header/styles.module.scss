@@ -6,17 +6,17 @@
 }
 
 .header {
-  margin: 0 10vmax;
+  margin: 0 10vw;
   background-color: rgba(18, 18, 18, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   i {
     width: 100%;
-    font-size: 1.5vmax;
+    font-size: 1.5vw;
     color: white;
     text-align: justify;
-    padding: 0 4vmax;
+    padding: 0 4vw;
     word-wrap: normal;
     text-indent: 3vw;
   }

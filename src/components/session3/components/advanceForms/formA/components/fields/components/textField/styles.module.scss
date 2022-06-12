@@ -1,0 +1,30 @@
+.container {
+  margin-right: 10px;
+
+  .container_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    .container_form_label {
+      font-size: 1vw;
+      color: #697b8e;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .container_form_field {
+      font-size: 1vw;
+      height: 2.5vw;
+      width: 14vw;
+      color: #697b8e;
+    }
+    .container_form_error {
+      flex-basis: 1vw;
+      font-size: 0.5vw;
+      width: 14vw;
+      color: #697b8e;
+      text-align: start;
+      font-style: italic;
+    }
+  }
+}

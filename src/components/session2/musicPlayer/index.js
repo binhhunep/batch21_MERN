@@ -10,9 +10,12 @@ import Media from "./media";
 import mediaPlayerSlice from "../../../redux/slices/session2/musicPlayer/mediaPlayerSlice";
 
 export default function MusicPlayer() {
+  const [musicSelectorId, setMusicSelectorId] = useState(0);
   const disPatch = useDispatch();
   const musicSelectorClick = (item) => {
     disPatch(mediaPlayerSlice.actions.saveEdit(item));
+    setMusicSelectorId(item.index);
+    console.log(item.index);
   };
   const musicsPlayerSlector = useSelector(musicPlayerSelectorRemaining);
   return (
@@ -25,7 +28,11 @@ export default function MusicPlayer() {
         {musicsPlayerSlector.map((item) => {
           return (
             <div
-              className={`row col-12 ${styles.container_audio_musics}`}
+              className={`row col-12 ${
+                musicSelectorId === item.index
+                  ? styles.container_audio_musics_1
+                  : styles.container_audio_musics
+              }`}
               key={item.id}
               onClick={() => {
                 musicSelectorClick(item);

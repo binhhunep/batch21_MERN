@@ -25,6 +25,24 @@
       .container_audio_music {
       }
     }
+    .container_audio_musics_1 {
+      animation-name: player;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      .container_audio_music {
+      }
+      @keyframes player {
+        from {
+          transform: translateX(0%);
+          opacity: 1;
+        }
+        to {
+          opacity: 0.1;
+          transform: translateX(-100%);
+        }
+      }
+    }
   }
   .container_media {
     display: flex;
@@ -45,7 +63,8 @@
         font-size: 1vmax;
       }
     }
-    .container_media_music {
-    }
+  }
+
+  .container_media_music {
   }
 }

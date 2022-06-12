@@ -1,10 +1,10 @@
 .app {
   flex-grow: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   .container {
-    height: auto;
     padding: 2vw 5vw;
     color: #3f4b6d;
     background-color: #fefefe;
@@ -37,7 +37,7 @@
         .container_cover_art {
           margin-bottom: 1.5vw;
           width: 10vw;
-          aspect-ratio: 4/4;
+          height: 10vw;
           background-repeat: none;
           background-size: cover;
           border-radius: 50%;
@@ -69,7 +69,7 @@
         .container_cover_art1 {
           margin-bottom: 1.5vw;
           width: 10vw;
-          aspect-ratio: 4/4;
+          height: 10vw;
           background-size: cover;
           background-repeat: none;
           border-radius: 50%;

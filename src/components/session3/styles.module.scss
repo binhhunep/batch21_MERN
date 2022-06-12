@@ -1,0 +1,15 @@
+.container {
+  border: solid;
+  margin: 20px 10vw;
+  .container_formLogin {
+    text-align: center;
+    h1 {
+      background: -webkit-linear-gradient(red, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .container_formLogin_body {
+      margin: 0 auto;
+    }
+  }
+}
