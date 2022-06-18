@@ -8,26 +8,32 @@ export default function Fields() {
     <div className={styles.container}>
       <div className={styles.container_header}>
         <div className={styles.header_left}>
-          <TextField label={"First Name"} title={"firstName"} />
-        </div>
-        <div className={styles.header_right}>
-          <TextField label={"Last Name"} title={"lastName"} />
+          <TextField
+            label1={"First Name"}
+            title1={"firstName"}
+            label2={"Last Name"}
+            title2={"lastName"}
+          />
         </div>
       </div>
       <div className={styles.container_body}>
         <div className={styles.body_left}>
-          <TextField label={"Phone Number"} title={"phoneNumber"} />
-        </div>
-        <div className={styles.body_right}>
-          <TextField label={"Email"} title={"email"} />
+          <TextField
+            label1={"Phone Number"}
+            title1={"phoneNumber"}
+            label2={"Email"}
+            title2={"email"}
+          />
         </div>
       </div>
       <div className={styles.container_footer}>
         <div className={styles.footer_left}>
-          <TextField label={"Password"} title={"password"} />
-        </div>
-        <div className={styles.footer_right}>
-          <TextField label={"Confirm Password"} title={"confirmPassword"} />
+          <TextField
+            label1={"Password"}
+            title1={"password"}
+            label2={"Confirm Password"}
+            title2={"confirmPassword"}
+          />
         </div>
       </div>
     </div>

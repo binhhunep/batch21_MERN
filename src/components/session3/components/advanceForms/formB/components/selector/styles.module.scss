@@ -1,0 +1,34 @@
+.container {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .container_checkBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      color: #c8250b;
+      font-size: 1vw;
+      margin: auto 0;
+      font-weight: 700;
+    }
+    .container_group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3px;
+      .container_icon {
+        font-size: 1vw;
+        margin-right: 5px;
+        padding: 0;
+      }
+      h6 {
+        margin: auto 0;
+        font-size: 1vw;
+        font-weight: 700;
+        color: #b4bfc9;
+      }
+    }
+  }
+}

@@ -102,6 +102,13 @@ export default function Navbar() {
                 >
                   SESSION3
                 </NavLink>
+                <NavLink
+                  exact
+                  to="/Session4"
+                  className={`${styles.dropdown_item} dropdown-item`}
+                >
+                  SESSION4
+                </NavLink>
               </ul>
             </li>
             <li className={`${styles.nav_item} nav-item`}>

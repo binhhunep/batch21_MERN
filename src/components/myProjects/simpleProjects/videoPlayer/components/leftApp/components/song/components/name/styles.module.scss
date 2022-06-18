@@ -1,0 +1,21 @@
+.container {
+  flex: 4;
+  text-align: start;
+  height: 100%;
+}
+.containerNew {
+  flex: 4;
+  text-align: start;
+  height: 100%;
+  animation: name 4s linear infinite;
+}
+@keyframes name {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

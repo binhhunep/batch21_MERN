@@ -1,0 +1,19 @@
+.container {
+  font-size: 2vmax;
+  cursor: pointer;
+  .container_pauseNew {
+    animation: pause 1s linear infinite;
+  }
+  @keyframes pause {
+    from {
+      transform: scale(2);
+      color: peru;
+      opacity: 1;
+    }
+    to {
+      transform: scale(1);
+      color: peru;
+      opacity: 0.5;
+    }
+  }
+}

@@ -66,7 +66,6 @@ export default function LoginA() {
               variant="filled"
               type="email"
               size={"small"}
-              inputMultiline={true}
               color="secondary"
             />
 

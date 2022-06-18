@@ -72,7 +72,6 @@ export default function LoginB() {
               type="text"
               variant="filled"
               required={true}
-              animated={true}
               size={"small"}
             />
 
@@ -84,7 +83,6 @@ export default function LoginB() {
               autoComplete="current-password"
               variant="filled"
               required={true}
-              animated={true}
               size={"small"}
             />
             <div className={styles.formik_signupForm_content}>

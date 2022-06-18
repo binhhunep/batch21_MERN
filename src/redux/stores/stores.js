@@ -14,6 +14,8 @@ import mediaPlayerSlice from "../slices/session2/musicPlayer/mediaPlayerSlice";
 
 import musicSlice from "../slices/simpleProjects/musicPlayer/musicSlice";
 import mediaSlice from "../slices/simpleProjects/musicPlayer/mediaSlice";
+import videoSlice from "../slices/simpleProjects/videoPlayer/videoSlice";
+import mediaVSlice from "../slices/simpleProjects/videoPlayer/mediaVSlice";
 
 const reduxStore = configureStore({
   reducer: {
@@ -29,6 +31,8 @@ const reduxStore = configureStore({
     mediaPlayer: mediaPlayerSlice.reducer,
     simpleProjects_musicPlayer: musicSlice.reducer,
     simpleProjects_mediaPlayer: mediaSlice.reducer,
+    simpleProjects_videoPlayer: videoSlice.reducer,
+    simpleProjects_mediaVPlayer: mediaVSlice.reducer,
   },
 });
 

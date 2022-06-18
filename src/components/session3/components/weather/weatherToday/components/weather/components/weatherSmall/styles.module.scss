@@ -1,0 +1,27 @@
+.container {
+  background-color: white;
+  margin-top: 14vw;
+  height: 12vw;
+  border-bottom-right-radius: 4vw;
+  border-bottom-left-radius: 4vw;
+  width: 20vw;
+  margin-left: -1vw;
+}
+@media screen and (min-width: 1300px) {
+  .container {
+    margin-top: 15vw;
+    height: 11vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    height: 12.5vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    height: 14vw;
+    width: 20vw;
+    margin-bottom: 1vw;
+  }
+}

@@ -1,0 +1,84 @@
+.containerCover {
+  background-image: url("../../../../../../public/images/session3/background/6.jpg");
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  margin: 0 20px;
+  .container {
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    background-color: rgba(28, 27, 27, 0.35);
+    .container_header {
+      display: flex;
+      align-items: center;
+      color: #f5f5f5;
+      margin-bottom: 5vw;
+    }
+    .header_brand {
+      margin: 2vw 2vw 0vw 3vw;
+      display: flex;
+      align-items: center;
+
+      .header_brand_icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #218ae6;
+      }
+      .header_brand_content {
+        color: white;
+        margin-left: 1vw;
+        font-size: 1vw;
+      }
+    }
+    .header_menu {
+      margin: 2vw 2vw 0vw 3vw;
+      font-size: 1vw;
+    }
+
+    .container_form {
+      margin: 2vw 0vw 0vw 4vw;
+      text-align: start;
+      .form_contentUp {
+        font-size: 1vw;
+        text-transform: uppercase;
+        color: #f5f5f5;
+      }
+      .form_title {
+        font-size: 2.5vw;
+        color: white;
+        strong {
+          color: #218ae6;
+          font-size: 2vw;
+        }
+      }
+      .form_contentDown {
+        font-size: 1vw;
+        color: #f5f5f5;
+        strong {
+          font-size: 1vw;
+          color: #218ae6;
+        }
+      }
+      .login_form {
+        max-width: 300px;
+        .login_form_forgotPass {
+          width: 70%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      .login_form_button {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

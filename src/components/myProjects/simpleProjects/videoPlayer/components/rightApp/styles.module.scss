@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  height: 105%;
+  background-color: white;
+  padding: 1vw 0;
+  border-radius: 10px;
+  .container_title {
+    .container_title_titleRight {
+    }
+    .container_title_totalSongs {
+    }
+  }
+  .container_body {
+    .container_body_navbar {
+    }
+    .container_body_player {
+    }
+    .container_body_control {
+    }
+    .container_body_video {
+      width: 30vw;
+    }
+  }
+}

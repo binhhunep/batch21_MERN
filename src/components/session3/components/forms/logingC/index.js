@@ -76,7 +76,6 @@ export default function LoginC() {
               autoComplete="current-password"
               variant="filled"
               required={true}
-              animated={true}
               size={"small"}
             />
             <Button

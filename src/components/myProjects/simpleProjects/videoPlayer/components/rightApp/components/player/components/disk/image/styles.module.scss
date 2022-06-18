@@ -1,0 +1,37 @@
+.container {
+  width: 10vw;
+  height: 10vw;
+  background-size: cover;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container_center {
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+  }
+}
+.containerNew {
+  width: 10vw;
+  height: 10vw;
+  background-size: cover;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: disk 3s infinite linear;
+  .container_center {
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+  }
+}
+@keyframes disk {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: start;
+  .formik_signupForm_button {
+    background-color: #c8250b;
+    width: 100%;
+    margin-top: 10px;
+    height: 2.5vw;
+    font-size: 1vw;
+    text-transform: capitalize;
+  }
+}

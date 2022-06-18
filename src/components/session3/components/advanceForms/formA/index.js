@@ -60,7 +60,7 @@ export default function FormA() {
         }}
       >
         <ThemeProvider theme={theme}>
-          <Form className={styles.container_right}>
+          <div className={styles.container_right}>
             <div className={styles.right_header}>
               <div className={styles.right_title}>
                 <h1>Register</h1>
@@ -86,7 +86,7 @@ export default function FormA() {
                 </div>
               </div>
             </div>
-          </Form>
+          </div>
         </ThemeProvider>
       </Formik>
     </div>

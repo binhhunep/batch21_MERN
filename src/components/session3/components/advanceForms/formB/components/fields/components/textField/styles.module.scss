@@ -1,0 +1,25 @@
+.container {
+  margin-right: 5px;
+  width: 100%;
+
+  .container_form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .container_form_left,
+    .container_form_right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 5px;
+      .container_form_field {
+        width: 28vw;
+        color: #697b8e;
+      }
+    }
+  }
+}

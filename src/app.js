@@ -7,6 +7,7 @@ import Navbar from "./containers/navbar";
 import Session1 from "./components/session1";
 import Session2 from "./components/session2";
 import Session3 from "./components/session3";
+import Session4 from "./components/session4";
 import SimpleProjects from "./components/myProjects/simpleProjects";
 
 export default function App() {
@@ -31,6 +32,10 @@ export default function App() {
           <Route exact path="/Session3">
             <Navbar />
             <Session3 />
+          </Route>
+          <Route exact path="/Session4">
+            <Navbar />
+            <Session4 />
           </Route>
           <Route exact path="/SimpleProjects">
             <Navbar />
