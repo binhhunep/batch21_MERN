@@ -5,21 +5,21 @@ import { Spin, Alert, Table } from "antd";
 const columns = [
   {
     title: <h1 style={{ fontSize: "1.2vw", fontWeight: "700" }}>Number</h1>,
-    width: 30,
+    width: 25,
     dataIndex: "index",
     key: "index",
     fixed: "left",
   },
   {
     title: <h1 style={{ fontSize: "1.2vw", fontWeight: "700" }}>Full Name</h1>,
-    width: 50,
+    width: 55,
     dataIndex: "name",
     key: "name",
     fixed: "left",
   },
   {
     title: <h1 style={{ fontSize: "1.2vw", fontWeight: "700" }}>Email</h1>,
-    width: 50,
+    width: 60,
     dataIndex: "email",
     key: "email",
     fixed: "left",
@@ -53,7 +53,7 @@ function Users() {
         url: "https://training.softech.cloud/api/training/users",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidHVuZ250MiIsImZ1bGxuYW1lIjoiTmfDtCBUaGFuaCBUw7luZyIsImVtYWlsIjoidHVuZ250QHNvZnRlY2guZWR1LnZuIn0sImlhdCI6MTY1NTM4NTQxMywiZXhwIjoxNjU1NDcxODEzLCJhdWQiOiJzb2Z0ZWNoLmNsb3VkIiwiaXNzIjoic29mdGVjaC5jbG91ZCIsInN1YiI6IjYyODM5NzY2ZWZmY2ZiMGFlNGZkMWMyYSJ9.3xR4317qxtJ2pw-fRSoQIAOmRpBi81osux_fy9rwOPMMwNXQnHtGsiP8PZav1W1zPzJMs8SrR2M8GaJX9YqRNg",
+            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidHVuZ250IiwiZnVsbG5hbWUiOiJOZ8O0IFRoYW5oIFTDuW5nIiwiZW1haWwiOiJ0dW5nbnRAc29mdGVjaC5lZHUudm4ifSwiaWF0IjoxNjU1NTQ2MzU1LCJleHAiOjE2NTU2MzI3NTUsImF1ZCI6InNvZnRlY2guY2xvdWQiLCJpc3MiOiJzb2Z0ZWNoLmNsb3VkIiwic3ViIjoiNjI4OGRmMTRjMDQyNmU4OWMzYjNmNDc4In0.jSgXiX5dKe4BjeTb6XgO3k9YVlgh9d9rH-U9sKDrOMnIpwdUBXcMVqGe_pP8F0FmuXBIgLYE4VbUVt_ikbZp8Q",
         },
       };
       const apiGetUsers = await axios(config)

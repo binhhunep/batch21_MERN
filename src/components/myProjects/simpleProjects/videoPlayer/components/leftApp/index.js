@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 
-import musicVSelectorRemaining from "../../../../../../redux/selectors/simpleProjects/videoPlayer/videoSelector";
+import videoVSelectorRemaining from "../../../../../../redux/selectors/simpleProjects/videoPlayer/videoSelector";
 import mediaVSlice from "../../../../../../redux/slices/simpleProjects/videoPlayer/mediaVSlice";
 import videoSlice from "../../../../../../redux/slices/simpleProjects/videoPlayer/videoSlice";
 
@@ -15,7 +15,7 @@ export default function LeftApp({ title, totalSongs }) {
   const [isChoseId, setIsChoseId] = useState(0);
   const [isPlay, setIsPlay] = useState(false);
   const disPatch = useDispatch();
-  const musicSlector = useSelector(musicVSelectorRemaining);
+  const videoSlector = useSelector(videoVSelectorRemaining);
 
   const playClick = (item) => {
     disPatch(videoSlice.actions.play(item));
@@ -30,7 +30,7 @@ export default function LeftApp({ title, totalSongs }) {
         totalSongs={totalSongs}
       />
       <div className={styles.container_songs}>
-        {musicSlector.map((item) => {
+        {videoSlector.map((item) => {
           return (
             <div key={item.id} onClick={() => playClick(item)}>
               <Song

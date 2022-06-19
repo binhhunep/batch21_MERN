@@ -12,7 +12,7 @@ const slice = createSlice({
       duration: "4:03",
       timer: 4 * 60 + 3,
       iconHeartColor: "#f75253",
-      select: true,
+      select: false,
     },
     {
       id: 2,
@@ -20,8 +20,8 @@ const slice = createSlice({
       avatar: "images/session2/videoPlayer/2.jpg",
       audioName: "How You Like That",
       author: "BlackPink",
-      duration: "03:33",
-      timer: 3 * 60 + 33,
+      duration: "03:03",
+      timer: 3 * 60 + 3,
       iconHeartColor: "#f75253",
       select: false,
     },
@@ -94,7 +94,7 @@ const slice = createSlice({
   ],
   reducers: {
     play: (state, action) => {
-      const musicSelector = state.forEach((item) => {
+      const videoSelector = state.forEach((item) => {
         if (item.id === action.payload.id) {
           if (action.payload.select === false) {
             item.select = true;
@@ -106,10 +106,10 @@ const slice = createSlice({
         }
       });
 
-      return musicSelector;
+      return videoSelector;
     },
     playMedia: (state, action) => {
-      const musicSelector = state.forEach((item) => {
+      const videoSelector = state.forEach((item) => {
         if (item.id === action.payload.id) {
           if (action.payload.select === true) {
             item.select = !item.select;
@@ -119,20 +119,22 @@ const slice = createSlice({
         }
       });
 
-      return musicSelector;
+      return videoSelector;
     },
     shuffleMedia: (state, action) => {
-      const musicSelector = state.forEach((item) => {
+      const videoSelector = state.forEach((item) => {
         if (item.id === action.payload) {
           if (item.select === false) {
-            item.select = !item.select;
+            item.select = false;
           } else {
             item.select = false;
           }
+        } else {
+          item.select = false;
         }
       });
 
-      return musicSelector;
+      return videoSelector;
     },
   },
 });

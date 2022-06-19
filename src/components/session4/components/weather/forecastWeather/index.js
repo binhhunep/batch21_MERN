@@ -108,7 +108,6 @@ function WeatherToday() {
     async function fetchData() {
       const DaNang = await axios(configDN)
         .then(function (response) {
-          console.log(response.data);
           const currentDay = new Date();
           let currentHours = currentDay.getHours();
           //Date1
