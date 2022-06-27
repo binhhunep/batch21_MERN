@@ -108,6 +108,15 @@ const slice = createSlice({
 
       return videoSelector;
     },
+    pause: (state, action) => {
+      const videoSelector = state.forEach((item) => {
+        if (item.id === action.payload.id) {
+          item.select = false;
+        }
+      });
+
+      return videoSelector;
+    },
     playMedia: (state, action) => {
       const videoSelector = state.forEach((item) => {
         if (item.id === action.payload.id) {
@@ -125,7 +134,7 @@ const slice = createSlice({
       const videoSelector = state.forEach((item) => {
         if (item.id === action.payload) {
           if (item.select === false) {
-            item.select = false;
+            item.select = true;
           } else {
             item.select = false;
           }

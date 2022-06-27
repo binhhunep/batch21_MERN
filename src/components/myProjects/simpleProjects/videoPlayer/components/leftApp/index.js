@@ -19,9 +19,9 @@ export default function LeftApp({ title, totalSongs }) {
 
   const playClick = (item) => {
     disPatch(videoSlice.actions.play(item));
-    disPatch(mediaVSlice.actions.playChange(item));
+    disPatch(mediaVSlice.actions.changeSong(item.id));
+    setIsPlay(!isPlay);
   };
-
   return (
     <div className={`col-lg-6 col-md-12 col-sm-12 ${styles.container}`}>
       <TitleLeft className={styles.container_title} title={title} />

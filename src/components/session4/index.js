@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useMemo, memo } from "react";
 import styles from "./styles.module.scss";
 import { Divider } from "antd";
 
 import WeatherToday from "./components/weather/forecastWeather";
 import CRUD from "./components/CRUD";
 
-export default function Session4() {
+function Session4() {
   return (
     <div className={` ${styles.container}`}>
       <div className={`row ${styles.container_formLogin}`}>
@@ -33,3 +33,4 @@ export default function Session4() {
     </div>
   );
 }
+export default Session4;

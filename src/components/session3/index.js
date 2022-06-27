@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, useMemo } from "react";
 import styles from "./styles.module.scss";
 import { Divider } from "antd";
 
@@ -12,7 +12,7 @@ import FormD from "./components/advanceForms/formD";
 import WeatherToday from "./components/weather/weatherToday";
 import Users from "../../networkingAPI/Users";
 
-export default function Session3() {
+function Session3() {
   return (
     <div className={` ${styles.container}`}>
       <div className={` ${styles.container_formLogin}`}>
@@ -98,3 +98,4 @@ export default function Session3() {
     </div>
   );
 }
+export default Session3;

@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import React, { useState } from "react";
+import React, { useState, memo, userMemo } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { Modal, Button } from "react-bootstrap";
@@ -22,7 +22,8 @@ import Person from "./person";
 import ShopBlock from "./shopBlock";
 import EclectronicShop from "./electronicShop";
 import State from "./state";
-export default function Session1() {
+
+function Session1() {
   const disPatch = useDispatch();
   // CHARTBAR EVENT
   const [isEditClick, setIsEditClick] = useState(false);
@@ -326,3 +327,4 @@ export default function Session1() {
     </div>
   );
 }
+export default Session1;

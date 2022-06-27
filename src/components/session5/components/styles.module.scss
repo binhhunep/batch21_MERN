@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+  margin-top: 10vh;
+  ul {
+    position: relative;
+    transform: skewY(-15deg);
+  }
+
+  ul li {
+    cursor: pointer;
+    position: relative;
+    margin-left: -0.5px;
+    list-style: none;
+    width: 30vh;
+    background-color: #3e3f46;
+    padding: 2vh;
+    transition: 0.5s;
+  }
+  p {
+    font-size: 1.2vw;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    height: 100%;
+    background-color: #2e3133;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+  }
+
+  ul li::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -1px;
+    width: 100%;
+    height: 50px;
+    background-color: #2e3133;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+  }
+
+  ul li:hover {
+    background-color: #33a3ee;
+    transform: translateX(-50px);
+  }
+
+  ul li:hover::before {
+    background-color: #1f5378;
+  }
+  ul li:hover::after {
+    background-color: #2982b9;
+  }
+
+  ul li span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: -50px;
+    width: 50px;
+    height: 100%;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+    color: #999999;
+    font-size: 2vw;
+    opacity: 0.5;
+  }
+
+  ul li:hover span {
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  ul li a {
+    color: #999999;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 0.05rem;
+    transition: 0.5s;
+  }
+
+  ul li:hover a {
+    color: #ffffff;
+  }
+
+  ul li:last-child::after {
+    box-shadow: -120px 120px 50px 5px rgba(0, 0, 0, 0.15);
+  }
+}

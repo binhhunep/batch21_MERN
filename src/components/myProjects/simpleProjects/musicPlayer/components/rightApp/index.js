@@ -48,6 +48,7 @@ export default function RightApp({ title, totalSongs }) {
         }
         disPatch(mediaSlice.actions.changeSong(id));
         disPatch(musicSlice.actions.shuffleMedia(id + 1));
+        setIsAutoPlay(false);
         break;
       case "next":
         if (id !== 8) {
@@ -57,6 +58,7 @@ export default function RightApp({ title, totalSongs }) {
         }
         disPatch(mediaSlice.actions.changeSong(id));
         disPatch(musicSlice.actions.shuffleMedia(id - 1));
+        setIsAutoPlay(false);
         break;
       case "shuffle":
         setIsShuffle(!isShuffle);
@@ -82,10 +84,15 @@ export default function RightApp({ title, totalSongs }) {
     if (refPlay.current.currentTime >= mediaSelector.timer) {
       let id = mediaSelector.id;
       if (isShuffle === true) {
-        disPatch(mediaSlice.actions.shuffle(id + 1));
-        disPatch(musicSlice.actions.shuffleMedia(id));
-        disPatch(musicSlice.actions.shuffleMedia(id + 1));
-        setIsAutoPlay(true);
+        if (id < 8) {
+          disPatch(mediaSlice.actions.shuffle(id + 1));
+          disPatch(musicSlice.actions.shuffleMedia(id + 1));
+          setIsAutoPlay(true);
+        } else {
+          disPatch(mediaSlice.actions.shuffle(1));
+          disPatch(musicSlice.actions.shuffleMedia(1));
+          setIsAutoPlay(true);
+        }
       } else {
         disPatch(mediaSlice.actions.pause(id));
       }

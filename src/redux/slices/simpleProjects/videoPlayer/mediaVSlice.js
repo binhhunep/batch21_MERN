@@ -115,13 +115,15 @@ const slice = createSlice({
     pause: (state, action) => {
       const mediaSelector = state.forEach((item) => {
         if (item.id === action.payload) {
-          item.play = false;
+          item.select = true;
         } else {
-          item.play = true;
+          item.select = false;
         }
+        item.play = false;
       });
       return mediaSelector;
     },
+
     changeSong: (state, action) => {
       const mediaSelector = state.forEach((item) => {
         if (item.id === action.payload) {
@@ -129,7 +131,7 @@ const slice = createSlice({
         } else {
           item.select = false;
         }
-        item.play = false;
+        item.play = true;
       });
       return mediaSelector;
     },

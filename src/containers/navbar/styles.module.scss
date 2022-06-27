@@ -35,16 +35,15 @@
             background-color: rgba(17, 17, 17, 0.5);
           }
           .dropdown_menu {
-            width: 100%;
-            z-index: 2;
-            // margin-top: 10px;
+            margin-top: 1.7vh;
+            z-index: 9999;
             padding: 0;
             border-radius: 0px;
             border: none;
-            text-align: center;
-            background-color: rgba(17, 17, 17, 0.2);
+            background: none;
             .dropdown_item {
-              width: 100%;
+              text-align: center;
+              width: 10vw;
               padding: 5px;
               text-transform: uppercase;
               background: none;
@@ -52,8 +51,14 @@
               color: white;
               font-size: 1vw;
             }
+
             .dropdown_item:hover {
               background-color: rgba(17, 17, 17, 0.5);
+            }
+          }
+          @media screen and(max-width: 1000px) {
+            .dropdown_menu {
+              margin-top: 0vh;
             }
           }
         }

@@ -125,10 +125,12 @@ const slice = createSlice({
       const musicSelector = state.forEach((item) => {
         if (item.id === action.payload) {
           if (item.select === false) {
-            item.select = false;
+            item.select = true;
           } else {
             item.select = false;
           }
+        } else {
+          item.select = false;
         }
       });
 

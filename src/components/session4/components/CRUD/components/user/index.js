@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import styles from "./styles.module.scss";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
@@ -17,9 +17,30 @@ import {
 import Logout from "./components/Logout";
 import Add from "./components/Add";
 
-export default function Users({ onLogoutClick, onAddClick }) {
+const layout = {
+  labelCol: {
+    span: 6,
+  },
+  wrapperCol: {
+    span: 14,
+  },
+};
+
+const validateMessages = {
+  required: "${label} is required!",
+  types: {
+    email: "${label} is not a valid email!",
+    number: "${label} is not a valid number!",
+  },
+  number: {
+    range: "${label} must be between ${min} and ${max}",
+  },
+};
+
+function Users({ onLogoutClick, onAddClick }) {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState([]);
+
   const [user, setUser] = useState({
     username: "binhhunep",
     email: "binh.quatest2@gmail.com",
@@ -48,25 +69,6 @@ export default function Users({ onLogoutClick, onAddClick }) {
   });
   const [currentUser, setCurrentUser] = useState(null);
   const [currentUserId, setCurrentUserId] = useState();
-  const layout = {
-    labelCol: {
-      span: 6,
-    },
-    wrapperCol: {
-      span: 14,
-    },
-  };
-
-  const validateMessages = {
-    required: "${label} is required!",
-    types: {
-      email: "${label} is not a valid email!",
-      number: "${label} is not a valid number!",
-    },
-    number: {
-      range: "${label} must be between ${min} and ${max}",
-    },
-  };
 
   const columns = [
     {
@@ -99,6 +101,7 @@ export default function Users({ onLogoutClick, onAddClick }) {
       width: 30,
       render: (value) => (
         <div style={{ display: "flex" }}>
+          {console.log("ham khai bao column")}
           <Space direction="horizontal" size={[15, 8]}>
             <div>
               <AiFillEdit
@@ -131,10 +134,12 @@ export default function Users({ onLogoutClick, onAddClick }) {
   ];
 
   const handleDeleteClick = (value) => {
+    console.log("ham delete");
     setDeleteUserId(value.id);
   };
   const handleEditClick = (value) => {
-    console.log(value);
+    console.log("ham edit");
+    setMessage("Update new user's information!");
     setCurrentUserId(value.id);
     setIsEdit(!isEdit);
     setIsModal(!isModal);
@@ -142,14 +147,18 @@ export default function Users({ onLogoutClick, onAddClick }) {
   };
 
   const handleOk = () => {
+    console.log("ham save");
+
     setTimeout(() => {
-      setEditUserId(editUserId);
+      // setEditUserId(editUserId);
       setLoadingModal(false);
       setUser(regiterInfo);
     }, 1000);
     setLoadingModal(!loadingModal);
   };
   const handleUpdate = () => {
+    console.log("ham update");
+
     setTimeout(() => {
       setEditUserId(currentUserId);
       setLoadingModal(false);
@@ -158,19 +167,26 @@ export default function Users({ onLogoutClick, onAddClick }) {
     setLoadingModal(!loadingModal);
   };
   const handleCancel = () => {
+    console.log("ham cancle");
     setIsModal(!isModal);
     setIsEdit(false);
   };
   const handleAddClick = (isAdd) => {
+    console.log("ham addClick");
+
+    setMessage("Add new user now!");
     isAdd ? setIsModal(!isModal) : setIsModal(isModal);
   };
   const handleOnChange = (e) => {
+    console.log("ham onchange");
+
     let { name, value } = e.target;
     setRegiterInfo({ ...regiterInfo, [name]: value });
   };
 
   const data = [];
   users.map((item, index) => {
+    console.log("ham map users");
     return data.push({
       username: item.username,
       key: index,
@@ -182,45 +198,20 @@ export default function Users({ onLogoutClick, onAddClick }) {
   });
 
   useEffect(() => {
-    async function fetchData() {
-      const config_getUsers = {
-        method: "GET",
-        url: "https://training.softech.cloud/api/training/users",
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYmluaDEwIiwiZnVsbG5hbWUiOiIiLCJlbWFpbCI6IiJ9LCJpYXQiOjE2NTU2NTkwNzAsImV4cCI6MTY1NTc0NTQ3MCwiYXVkIjoic29mdGVjaC5jbG91ZCIsImlzcyI6InNvZnRlY2guY2xvdWQiLCJzdWIiOiI2MmFmMmU5ZDg3ODA2NGNlYTgwMmYzOGUifQ.XYy_QpqM9yJnW84Pd4ItnEW2ZJRnGUzRDyDGHHYx-dAqCbJa5EDBrJgEnNAp4J2EPzgDz5s6YzY1GGL7qOlTsQ",
-        },
-      };
+    const fetchData = async () => {
       const config_addUser = {
         method: "POST",
         url: "https://training.softech.cloud/api/training/users/register",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYmluaDEwIiwiZnVsbG5hbWUiOiIiLCJlbWFpbCI6IiJ9LCJpYXQiOjE2NTU2NTkwNzAsImV4cCI6MTY1NTc0NTQ3MCwiYXVkIjoic29mdGVjaC5jbG91ZCIsImlzcyI6InNvZnRlY2guY2xvdWQiLCJzdWIiOiI2MmFmMmU5ZDg3ODA2NGNlYTgwMmYzOGUifQ.XYy_QpqM9yJnW84Pd4ItnEW2ZJRnGUzRDyDGHHYx-dAqCbJa5EDBrJgEnNAp4J2EPzgDz5s6YzY1GGL7qOlTsQ",
+            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYmluaDEwIiwiZnVsbG5hbWUiOiJiaW5oMTAiLCJlbWFpbCI6ImJpbmgucXVhdGVzdDJAZ21haWwuY29tIn0sImlhdCI6MTY1NTgzMjUxMCwiZXhwIjoxNjU1OTE4OTEwLCJhdWQiOiJzb2Z0ZWNoLmNsb3VkIiwiaXNzIjoic29mdGVjaC5jbG91ZCIsInN1YiI6IjYyYWYyZTlkODc4MDY0Y2VhODAyZjM4ZSJ9.Mq2NUtgCyWbqzBWKAHrbYLN88QOLZlyioshZhmwmODWg4lihhOTUBSyxBP86kdqW5k7eW6AM8SwqyqCP8kddvA",
           "Content-Type": "application/json",
         },
         data: JSON.stringify(user),
       };
-      const config_deleteUser = {
-        method: "DELETE",
-        url: `https://training.softech.cloud/api/training/users/${deleteUserId}?id`,
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYmluaDEwIiwiZnVsbG5hbWUiOiIiLCJlbWFpbCI6IiJ9LCJpYXQiOjE2NTU2NTkwNzAsImV4cCI6MTY1NTc0NTQ3MCwiYXVkIjoic29mdGVjaC5jbG91ZCIsImlzcyI6InNvZnRlY2guY2xvdWQiLCJzdWIiOiI2MmFmMmU5ZDg3ODA2NGNlYTgwMmYzOGUifQ.XYy_QpqM9yJnW84Pd4ItnEW2ZJRnGUzRDyDGHHYx-dAqCbJa5EDBrJgEnNAp4J2EPzgDz5s6YzY1GGL7qOlTsQ",
-        },
-      };
-      const config_editUser = {
-        method: "PUT",
-        url: `https://training.softech.cloud/api/training/users/${editUserId}?id`,
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYmluaDEwIiwiZnVsbG5hbWUiOiIiLCJlbWFpbCI6IiJ9LCJpYXQiOjE2NTU2NTkwNzAsImV4cCI6MTY1NTc0NTQ3MCwiYXVkIjoic29mdGVjaC5jbG91ZCIsImlzcyI6InNvZnRlY2guY2xvdWQiLCJzdWIiOiI2MmFmMmU5ZDg3ODA2NGNlYTgwMmYzOGUifQ.XYy_QpqM9yJnW84Pd4ItnEW2ZJRnGUzRDyDGHHYx-dAqCbJa5EDBrJgEnNAp4J2EPzgDz5s6YzY1GGL7qOlTsQ",
-          "Content-Type": "application/json",
-        },
-        data: JSON.stringify(currentUser),
-      };
-      const apiAddUser = await axios(config_addUser)
+      await axios(config_addUser)
         .then(function (response) {
+          console.log("ham API adduser");
           if (!response.data.message) {
             setLoading(!loading);
             setMessage("Add user success!");
@@ -229,47 +220,92 @@ export default function Users({ onLogoutClick, onAddClick }) {
           }
         })
         .catch(function (error) {
-          console.log(error);
           setLoading(!loading);
           setMessage(error.message);
         });
-      const apiDeleteUsers = await axios(config_deleteUser)
-        .then(function (response) {})
+    };
+    fetchData();
+  }, [user]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const config_deleteUser = {
+        method: "DELETE",
+        url: `https://training.softech.cloud/api/training/users/${deleteUserId}?id`,
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYmluaDEwIiwiZnVsbG5hbWUiOiJiaW5oMTAiLCJlbWFpbCI6ImJpbmgucXVhdGVzdDJAZ21haWwuY29tIn0sImlhdCI6MTY1NTgzMjUxMCwiZXhwIjoxNjU1OTE4OTEwLCJhdWQiOiJzb2Z0ZWNoLmNsb3VkIiwiaXNzIjoic29mdGVjaC5jbG91ZCIsInN1YiI6IjYyYWYyZTlkODc4MDY0Y2VhODAyZjM4ZSJ9.Mq2NUtgCyWbqzBWKAHrbYLN88QOLZlyioshZhmwmODWg4lihhOTUBSyxBP86kdqW5k7eW6AM8SwqyqCP8kddvA",
+        },
+      };
+      await axios(config_deleteUser)
+        .then(function (response) {
+          console.log("ham API delete");
+        })
         .catch(function (error) {
-          console.log(error);
           setLoading(!loading);
         });
-      const apiEditUser = await axios(config_editUser)
+    };
+    fetchData();
+  }, [deleteUserId]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const config_editUser = {
+        method: "PUT",
+        url: `https://training.softech.cloud/api/training/users/${editUserId}?id`,
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYmluaDEwIiwiZnVsbG5hbWUiOiJiaW5oMTAiLCJlbWFpbCI6ImJpbmgucXVhdGVzdDJAZ21haWwuY29tIn0sImlhdCI6MTY1NTgzMjUxMCwiZXhwIjoxNjU1OTE4OTEwLCJhdWQiOiJzb2Z0ZWNoLmNsb3VkIiwiaXNzIjoic29mdGVjaC5jbG91ZCIsInN1YiI6IjYyYWYyZTlkODc4MDY0Y2VhODAyZjM4ZSJ9.Mq2NUtgCyWbqzBWKAHrbYLN88QOLZlyioshZhmwmODWg4lihhOTUBSyxBP86kdqW5k7eW6AM8SwqyqCP8kddvA",
+          "Content-Type": "application/json",
+        },
+        data: JSON.stringify(currentUser),
+      };
+      await axios(config_editUser)
         .then(function (response) {
+          console.log("ham API edituser");
+
           if (response.data.value) {
-            console.log(editUserId);
             setLoading(!loading);
             setMessage("Update success!");
           }
         })
         .catch(function (error) {
-          console.log(error);
           setLoading(!loading);
           setMessage(error.message);
         });
+    };
+    fetchData();
+  }, [currentUser]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const config_getUsers = {
+        method: "GET",
+        url: "https://training.softech.cloud/api/training/users",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYmluaDEwIiwiZnVsbG5hbWUiOiJiaW5oMTAiLCJlbWFpbCI6ImJpbmgucXVhdGVzdDJAZ21haWwuY29tIn0sImlhdCI6MTY1NTgzMjUxMCwiZXhwIjoxNjU1OTE4OTEwLCJhdWQiOiJzb2Z0ZWNoLmNsb3VkIiwiaXNzIjoic29mdGVjaC5jbG91ZCIsInN1YiI6IjYyYWYyZTlkODc4MDY0Y2VhODAyZjM4ZSJ9.Mq2NUtgCyWbqzBWKAHrbYLN88QOLZlyioshZhmwmODWg4lihhOTUBSyxBP86kdqW5k7eW6AM8SwqyqCP8kddvA",
+        },
+      };
       const apiGetUsers = await axios(config_getUsers)
         .then(function (response) {
+          console.log("ham API getuser");
           if (response.data) {
             setLoading(!loading);
             setUsers(response.data);
           }
         })
         .catch(function (error) {
-          console.log(error);
           setLoading(!loading);
+          setMessage(error.message);
         });
-    }
+    };
     fetchData();
-  }, [loadingModal, deleteUserId, currentUser]);
+  }, [deleteUserId, user, currentUser]);
 
   return (
     <div style={{ position: "relative" }}>
-      <h5>Danh sách người dùng</h5>
+      <h1>Danh sách người dùng</h1>
       {loading && (
         <div
           style={{
@@ -442,3 +478,4 @@ export default function Users({ onLogoutClick, onAddClick }) {
     </div>
   );
 }
+export default Users;

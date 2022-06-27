@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} navbar navbar-expand-lg navbar-light`}>
       <div className={`${styles.container_fluid} container-fluid`}>
-        <a className={styles.navbar_brand} href="#">
+        <a className={styles.navbar_brand}>
           <img
             className={styles.navbar_logo}
             src="icons/navbar/logo.png"
@@ -33,7 +33,7 @@ export default function Navbar() {
         >
           <ul className={`${styles.navbar_nav} navbar-nav mr-auto mb-2`}>
             <li className={`${styles.nav_item} nav-item active`}>
-              <NavLink to="/" exact className={`${styles.nav_link} nav-link`}>
+              <NavLink to="/" className={`${styles.nav_link} nav-link`}>
                 HOME
               </NavLink>
             </li>
@@ -52,15 +52,13 @@ export default function Navbar() {
                 aria-labelledby="navbarDropdown"
               >
                 <NavLink
-                  exact
-                  to="/SimpleProjects"
+                  to="/MyProjects/SimpleProjects"
                   className={`${styles.dropdown_item} dropdown-item`}
                 >
                   Simple Projects
                 </NavLink>
                 <NavLink
-                  exact
-                  to="/AdvanceProjects"
+                  to="/MyProjects/AdvanceProjects"
                   className={`${styles.dropdown_item} dropdown-item`}
                 >
                   Advance Projects
@@ -82,50 +80,44 @@ export default function Navbar() {
                 aria-labelledby="navbarDropdown"
               >
                 <NavLink
-                  exact
-                  to="/Session1"
+                  to="/Batch_21/Session1"
                   className={`${styles.dropdown_item} dropdown-item`}
                 >
                   SESSION1
                 </NavLink>
                 <NavLink
-                  exact
-                  to="/Session2"
+                  to="/Batch_21/Session2"
                   className={`${styles.dropdown_item} dropdown-item`}
                 >
                   SESSION2
                 </NavLink>
                 <NavLink
-                  exact
-                  to="/Session3"
+                  to="/Batch_21/Session3"
                   className={`${styles.dropdown_item} dropdown-item`}
                 >
                   SESSION3
                 </NavLink>
                 <NavLink
-                  exact
-                  to="/Session4"
+                  to="/Batch_21/Session4"
                   className={`${styles.dropdown_item} dropdown-item`}
                 >
                   SESSION4
                 </NavLink>
+                <NavLink
+                  to="/Batch_21/Session5"
+                  className={`${styles.dropdown_item} dropdown-item`}
+                >
+                  SESSION5
+                </NavLink>
               </ul>
             </li>
             <li className={`${styles.nav_item} nav-item`}>
-              <NavLink
-                to="/Contact"
-                exact
-                className={`${styles.nav_link} nav-link`}
-              >
+              <NavLink to="/Contact" className={`${styles.nav_link} nav-link`}>
                 CONTACT
               </NavLink>
             </li>
             <li className={`${styles.nav_item} nav-item`}>
-              <NavLink
-                to="/Login"
-                exact
-                className={`${styles.nav_link} nav-link`}
-              >
+              <NavLink to="/Login" className={`${styles.nav_link} nav-link`}>
                 LOGIN
               </NavLink>
             </li>

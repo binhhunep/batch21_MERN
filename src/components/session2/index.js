@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import React, { useState } from "react";
+import React, { useState, useMemo, memo } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { Modal, Button } from "react-bootstrap";
@@ -11,7 +11,7 @@ import TabbedContent from "./tabbedContent";
 import ImageGalleries from "./imageGalleries";
 import MusicPlayer from "./musicPlayer";
 //react motion
-export default function Session2() {
+function Session2() {
   return (
     <div className={styles.container}>
       <div className={styles.container_likeButton}>
@@ -41,3 +41,4 @@ export default function Session2() {
     </div>
   );
 }
+export default Session2;

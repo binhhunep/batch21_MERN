@@ -11,17 +11,19 @@
   .container {
     margin-top: 15vw;
     height: 11vw;
+    width: 20vw;
   }
 }
 @media screen and (max-width: 900px) {
   .container {
     height: 12.5vw;
+    width: 20vw;
   }
 }
 @media screen and (max-width: 500px) {
   .container {
     height: 14vw;
-    width: 20vw;
     margin-bottom: 1vw;
+    width: 20vw;
   }
 }

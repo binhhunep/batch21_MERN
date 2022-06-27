@@ -48,6 +48,8 @@ export default function RightApp({ title, totalSongs }) {
         }
         disPatch(mediaVSlice.actions.changeSong(id));
         disPatch(videoSlice.actions.shuffleMedia(id + 1));
+        setIsAutoPlay(false);
+
         break;
       case "next":
         if (id !== 8) {
@@ -57,6 +59,7 @@ export default function RightApp({ title, totalSongs }) {
         }
         disPatch(mediaVSlice.actions.changeSong(id));
         disPatch(videoSlice.actions.shuffleMedia(id - 1));
+        setIsAutoPlay(false);
         break;
       case "shuffle":
         setIsShuffle(!isShuffle);
@@ -82,10 +85,15 @@ export default function RightApp({ title, totalSongs }) {
     if (refPlay.current.currentTime >= mediaSelector.timer) {
       let id = mediaSelector.id;
       if (isShuffle === true) {
-        disPatch(mediaVSlice.actions.shuffle(id + 1));
-        disPatch(videoSlice.actions.shuffleMedia(id));
-        disPatch(videoSlice.actions.shuffleMedia(id + 1));
-        setIsAutoPlay(true);
+        if (id < 8) {
+          disPatch(mediaVSlice.actions.shuffle(id + 1));
+          disPatch(videoSlice.actions.shuffleMedia(id + 1));
+          setIsAutoPlay(true);
+        } else {
+          disPatch(mediaVSlice.actions.shuffle(1));
+          disPatch(videoSlice.actions.shuffleMedia(1));
+          setIsAutoPlay(true);
+        }
       } else {
         disPatch(mediaVSlice.actions.pause(id));
       }
@@ -108,7 +116,6 @@ export default function RightApp({ title, totalSongs }) {
 
   return (
     <div className={` ${styles.container}`}>
-      {console.log(refPlay)}
       <div className={` ${styles.container_title}`}>
         <div className={` ${styles.container_title_titleRight}`}>
           <TitleRight title={title} />

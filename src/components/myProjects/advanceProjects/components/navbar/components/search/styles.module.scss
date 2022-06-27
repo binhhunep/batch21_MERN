@@ -1,0 +1,57 @@
+.container {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-white);
+  transition-timing-function: ease-in;
+  transition: all 1s;
+  &:hover .container_iconSearch {
+    color: var(--color-white);
+  }
+  .container_iconSearch {
+    font-size: 15px;
+    color: var(--color-background);
+    transform: translateX(25px);
+    color: var(--color-white);
+    &:focus {
+      color: var(--color-white);
+    }
+    @media only screen and (max-width: 600px) {
+      transform: translateX(10px);
+    }
+  }
+  .container_input {
+    font-size: 14px;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    outline: none;
+    width: 0px;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0;
+    background-color: var(--color-background);
+    transition: width 0.5s;
+    &:focus {
+      padding-left: 36px;
+      width: 300px;
+      cursor: text;
+      opacity: 1;
+      z-index: -1;
+      @media only screen and (max-width: 600px) {
+        padding-left: 30px;
+        width: 200px;
+      }
+      @media only screen and (max-width: 420px) {
+        padding-left: 25px;
+        width: 150px;
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      height: 80%;
+    }
+    @media only screen and (max-width: 420px) {
+      height: 70%;
+    }
+  }
+}

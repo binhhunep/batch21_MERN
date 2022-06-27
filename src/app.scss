@@ -1,11 +1,17 @@
-.app {
-  .app_container {
-    background-image: url("../public/backgrounds/app/AppBackground.jpg");
-    background-position: center;
-    background-repeat: none;
-    background-size: cover;
-    background-attachment: fixed;
-    text-align: center;
-    height: 100vh;
-  }
+.app_container {
+  background-image: url("../public/backgrounds/app/AppBackground.jpg");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  height: 100%;
+}
+:root {
+  --color-white: rgb(220, 218, 218);
+  --color-background: rgb(17, 17, 17);
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+  user-select: none;
 }
