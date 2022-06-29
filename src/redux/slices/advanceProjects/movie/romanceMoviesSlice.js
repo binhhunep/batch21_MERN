@@ -22,7 +22,6 @@ const slice = createSlice({
   initialState: { data: [], loading: false, error: "" },
   reducers: {
     showPoster: (state, action) => {
-      console.log(action.payload);
       const romanceMovies = action.payload;
       return romanceMovies;
     },

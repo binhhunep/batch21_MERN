@@ -7,6 +7,7 @@ import Navbar from "./components/navbar";
 import Intro from "./components/header/intro/Intro";
 import Menu from "./components/menu";
 import Section from "./components/section";
+import Search from "./components/search";
 
 import { getNetFlixOriginals } from "../../../redux/slices/advanceProjects/movie/netFlexOriginalsSlice";
 import { getActionMovies } from "../../../redux/slices/advanceProjects/movie/actionMoviesSlice";
@@ -16,6 +17,7 @@ import { getHorrorMovies } from "../../../redux/slices/advanceProjects/movie/hor
 import { getRomanceMovies } from "../../../redux/slices/advanceProjects/movie/romanceMoviesSlice";
 import { getTopRatedMovies } from "../../../redux/slices/advanceProjects/movie/topRatedMoviesSlice";
 import { getTrendingMovies } from "../../../redux/slices/advanceProjects/movie/trendingMoviesSlice";
+import { getAllMovies } from "../../../redux/slices/advanceProjects/search/searchSlice";
 
 import nextFlexSelectorRemaining from "../../../redux/selectors/advanceProjects/movie/netFlexOriginalsSelector";
 import actionMoviesSelectorRemaining from "../../../redux/selectors/advanceProjects/movie/actionMoviesSelector";
@@ -25,10 +27,21 @@ import horrorMoviesSelectorRemaining from "../../../redux/selectors/advanceProje
 import romanceMoviesSelectorRemaining from "../../../redux/selectors/advanceProjects/movie/romanceMoviesSelector";
 import trendingMoviesSelectorRemaining from "../../../redux/selectors/advanceProjects/movie/trendingMoviesSelector";
 import topRatedMoviesSelectorRemaining from "../../../redux/selectors/advanceProjects/movie/topRatedMoviesSelector";
+import searchMoviesSelectorRemaining from "../../../redux/selectors/advanceProjects/search/searchMoviesSelector";
 
 function AdvanceProjects() {
   const [isUpdateApi, setIsUpdateApi] = useState(false);
   const disPatch = useDispatch();
+
+  const netFlixOriginalsSelector = useSelector(nextFlexSelectorRemaining);
+  const actionMoviesSelector = useSelector(actionMoviesSelectorRemaining);
+  const comedyMoviesSelector = useSelector(comedyMoviesSelectorRemaining);
+  const documentariesSelector = useSelector(documentariesSelectorRemaining);
+  const horrorMoviesSelector = useSelector(horrorMoviesSelectorRemaining);
+  const romanceMoviesSelector = useSelector(romanceMoviesSelectorRemaining);
+  const trendingMoviesSelector = useSelector(trendingMoviesSelectorRemaining);
+  const topRatedMoviesSelector = useSelector(topRatedMoviesSelectorRemaining);
+  const searchMoviesSelector = useSelector(searchMoviesSelectorRemaining);
 
   useEffect(() => {
     disPatch(getNetFlixOriginals());
@@ -39,16 +52,8 @@ function AdvanceProjects() {
     disPatch(getRomanceMovies());
     disPatch(getTopRatedMovies());
     disPatch(getTrendingMovies());
-  }, [isUpdateApi]);
-
-  const netFlixOriginalsSelector = useSelector(nextFlexSelectorRemaining);
-  const actionMoviesSelector = useSelector(actionMoviesSelectorRemaining);
-  const comedyMoviesSelector = useSelector(comedyMoviesSelectorRemaining);
-  const documentariesSelector = useSelector(documentariesSelectorRemaining);
-  const horrorMoviesSelector = useSelector(horrorMoviesSelectorRemaining);
-  const romanceMoviesSelector = useSelector(romanceMoviesSelectorRemaining);
-  const trendingMoviesSelector = useSelector(trendingMoviesSelectorRemaining);
-  const topRatedMoviesSelector = useSelector(topRatedMoviesSelectorRemaining);
+    disPatch(getAllMovies(searchMoviesSelector.search));
+  }, [searchMoviesSelector.search]);
 
   return (
     <div className={styles.container}>
@@ -64,6 +69,8 @@ function AdvanceProjects() {
         dataRomance={romanceMoviesSelector.data}
         dataTrending={trendingMoviesSelector.data}
         dataTopRated={topRatedMoviesSelector.data}
+        dataSearch={searchMoviesSelector.data}
+        isSearchChange={searchMoviesSelector.isSearchChange}
       />
     </div>
   );

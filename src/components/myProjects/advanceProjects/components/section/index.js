@@ -1,12 +1,16 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
+import { useDispatch, useSelector } from "react-redux";
 import Originals from "./components/originals";
 import { FaArrowAltCircleUp } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 import { useScrollY } from "../hooks/useScrollY";
+
 import MovieDetail from "../modal/movieDetail/MovieDetail";
-import { useDispatch, useSelector } from "react-redux";
+import Search from "../search";
+
 import movieDetailSlice from "../../../../../redux/slices/advanceProjects/movieDetail/movieDetailSlice";
+
 const handlePageUpClick = () => {
   scroll.scrollToTop({ duration: 100, smooth: true });
 };
@@ -20,10 +24,11 @@ function Section({
   dataRomance,
   dataTrending,
   dataTopRated,
+  dataSearch,
+  isSearchChange,
 }) {
   const [scrollY, setScrollY] = useScrollY();
   const disPatch = useDispatch();
-
   const showModal = (movieDetail) => {
     disPatch(movieDetailSlice.actions.showDetail(movieDetail));
   };
@@ -31,6 +36,7 @@ function Section({
   return (
     <div className={styles.container}>
       <MovieDetail />
+      <Search data={dataSearch} isSearchChange={isSearchChange} />
       <div className={styles.container_listMovies}>
         <Originals
           onClick={(movieDetail) => showModal(movieDetail)}

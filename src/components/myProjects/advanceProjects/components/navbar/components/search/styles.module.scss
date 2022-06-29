@@ -17,9 +17,6 @@
     &:focus {
       color: var(--color-white);
     }
-    @media only screen and (max-width: 600px) {
-      transform: translateX(10px);
-    }
   }
   .container_input {
     font-size: 14px;
@@ -39,18 +36,17 @@
       opacity: 1;
       z-index: -1;
       @media only screen and (max-width: 600px) {
-        padding-left: 30px;
         width: 200px;
       }
-      @media only screen and (max-width: 420px) {
-        padding-left: 25px;
+
+      @media only screen and (max-width: 400px) {
         width: 150px;
       }
     }
     @media only screen and (max-width: 600px) {
       height: 80%;
     }
-    @media only screen and (max-width: 420px) {
+    @media only screen and (max-width: 400px) {
       height: 70%;
     }
   }

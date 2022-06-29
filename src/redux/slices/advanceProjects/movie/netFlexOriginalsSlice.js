@@ -22,7 +22,6 @@ const slice = createSlice({
   initialState: { data: [], loading: false, error: "" },
   reducers: {
     showPoster: (state, action) => {
-      console.log(action.payload);
       const netFlixOriginals = action.payload;
       return netFlixOriginals;
     },

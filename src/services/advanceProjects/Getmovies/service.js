@@ -42,6 +42,12 @@ const getDocumentariesService = async () => {
   );
 };
 
+const getAllMoviesService = async (search) => {
+  return await instance.get(
+    `${types.ALL_MOVIES_URL}${types.API_KEY}${types.ALL_MOVIES_GENDES}&query=${search}`
+  );
+};
+
 export {
   getNetFlixOriginalsService,
   getTrendingMoviesService,
@@ -51,4 +57,5 @@ export {
   getHorrorMoviesService,
   getRomanceMoviesService,
   getDocumentariesService,
+  getAllMoviesService,
 };

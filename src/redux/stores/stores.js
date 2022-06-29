@@ -27,6 +27,7 @@ import topRatedMoviesSlice from "../slices/advanceProjects/movie/topRatedMoviesS
 import documentariesSlice from "../slices/advanceProjects/movie/documentariesSlice";
 import trendingMoviesSlice from "../slices/advanceProjects/movie/trendingMoviesSlice";
 import movieDetailSlice from "../slices/advanceProjects/movieDetail/movieDetailSlice";
+import searchSlice from "../slices/advanceProjects/search/searchSlice";
 const reduxStore = configureStore({
   reducer: {
     /*Sesion1*/
@@ -54,6 +55,7 @@ const reduxStore = configureStore({
     advanceProjects_topRatedMovies: topRatedMoviesSlice.reducer,
     advanceProjects_documentaries: documentariesSlice.reducer,
     advanceProjects_movieDetail: movieDetailSlice.reducer,
+    advanceProjects_searchMovies: searchSlice.reducer,
   },
 });
 

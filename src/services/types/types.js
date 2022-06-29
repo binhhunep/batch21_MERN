@@ -7,7 +7,7 @@ export const COMEDY_MOVIES_URL = "/discover/movie?api_key=";
 export const HORROR_MOVIES_URL = "/discover/movie?api_key=";
 export const ROMANCE_MOVIES_URL = "/discover/movie?api_key=";
 export const DOCUMENTARIES_MOVIES_URL = "/discover/movie?api_key=";
-
+export const ALL_MOVIES_URL = "/search/movie?api_key=";
 //*chuoi truy van*//
 export const NETFLIX_ORIGINALS_GENRES = "&with_networks=213";
 export const TRENDING_MOVIES_GENDES = "&language=en-US&page=4";
@@ -17,3 +17,4 @@ export const COMEDY_MOVIES_GENDES = "&with_genres=35";
 export const HORROR_MOVIES_GENDES = "&with_genres=27";
 export const ROMANCE_MOVIES_GENDES = "&with_genres=10749";
 export const DOCUMENTARIES_MOVIES_GENDES = "&with_genres=10752";
+export const ALL_MOVIES_GENDES = "&language=en-US&include_adult=false";
